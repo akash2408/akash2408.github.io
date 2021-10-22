@@ -7,20 +7,10 @@ import {
   ProjectContainer,
   ProjectSection,
   ProjectSectionContent,
-  ProjectImage,
-  ProjectTextRow,
   ProjectSectionHeading,
-  ProjectSectionText,
-  ProjectBackground,
   ProjectHeader,
   ProjectSectionColumns,
 } from 'components/ProjectLayout';
-import heartbeatBackground from 'assets/heartbeat-background.jpg';
-import heartbeatBackgroundLarge from 'assets/heartbeat-background.jpg';
-import heartbeatBackgroundPlaceholder from 'assets/placeholder.jpg';
-import heartbeatApp from 'assets/heartbeat-app.jpg';
-import heartbeatAppLarge from 'assets/heartbeat-app.jpg';
-import heartbeatAppPlaceholder from 'assets/placeholder.jpg';
 import heartbeatSlide1 from 'assets/heartbeat-slide-1.jpg';
 import heartbeatSlideLarge1 from 'assets/heartbeat-slide-1.jpg';
 import heartbeatSlidePlaceholder1 from 'assets/placeholder.jpg';
@@ -41,7 +31,6 @@ import heartbeatSidebarAnnotations from 'assets/heartbeat-app.jpg';
 import heartbeatSidebarAnnotationsLarge from 'assets/heartbeat-app.jpg';
 import heartbeatSidebarAnnotationsPlaceholder from 'assets/placeholder.jpg';
 
-import prerender from 'utils/prerender';
 import { media } from 'utils/style';
 import './index.css';
 

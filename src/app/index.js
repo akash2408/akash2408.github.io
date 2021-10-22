@@ -19,6 +19,8 @@ const Home = lazy(() => import('pages/Home'));
 const Contact = lazy(() => import('pages/Contact'));
 const ProjectVisualizer = lazy(() => import('pages/Visualizer'));
 const ProjectHeartbeat = lazy(() => import('pages/Heartbeat'));
+const ProjectBeato = lazy(() => import('pages/Beato'));
+const ProjectKeeto = lazy(() => import('pages/Keeto'));
 const Page404 = lazy(() => import('pages/404'));
 
 export const AppContext = createContext();
@@ -72,6 +74,8 @@ const AppRoutes = () => {
                     <Route path="/contact" component={Contact} />
                     <Route path="/projects/visualizer" component={ProjectVisualizer} />
                     <Route path="/projects/heartbeat" component={ProjectHeartbeat} />
+                    <Route path="/projects/beato" component={ProjectBeato} />
+                    <Route path="/projects/keeto" component={ProjectKeeto} />
                     <Route component={Page404} />
                   </Switch>
                 </Suspense>

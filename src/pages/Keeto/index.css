@@ -1,0 +1,149 @@
+.mobile-project-summary__content {
+  width: 100%;
+  max-width: var(--maxWidthL);
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 16px;
+  grid-row-gap: var(--space2XL);
+
+  @media (--mediaLaptop) {
+    .project-summary__content {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @media (--mediaTablet) {
+    @nest .project-summary--alternate & {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @media (--mediaTablet) {
+    & {
+      grid-template-columns: auto auto;
+      flex-direction: column-reverse;
+      height: auto;
+    }
+  }
+}
+
+.keeto__columns {
+  margin: 20px 0 60px;
+}
+
+.keeto__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  margin: 40px 0;
+
+  @media (--mediaTablet) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.keeto__grid-image {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 100%;
+  grid-column: 1;
+  grid-row: 1;
+
+  @media (--mediaLaptop) {
+    & {
+      grid-template-rows: 1fr;
+    }
+  }
+}
+
+.keeto__grid-background {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+
+  @media (--mediaTablet) {
+    & {
+      padding: 0 120px;
+    }
+  }
+
+  @media (--mediaMobile) {
+    & {
+      padding: 0 60px;
+    }
+  }
+}
+
+.keeto__grid-foreground {
+  grid-column: 1;
+  grid-row: 2;
+  position: relative;
+  right: -140px;
+  bottom: 40px;
+  align-self: flex-end;
+  width: 110%;
+
+  @media (--mediaLaptop) {
+    & {
+      width: auto;
+      left: auto;
+      right: auto;
+    }
+  }
+}
+
+.keeto__grid-text {
+  padding-top: 80px;
+
+  @media (--mediaDesktop) {
+    & {
+      padding-top: 40px;
+    }
+  }
+
+  @media (--mediaTablet) {
+    & {
+      padding-top: 0;
+    }
+  }
+}
+
+.keeto__sidebar-images {
+  display: grid;
+  grid-template-columns: repeat(6, [col] 1fr);
+  align-items: center;
+
+  @media (--mediaTablet) {
+    & {
+      padding: 0 80px;
+      margin-top: 60px;
+    }
+  }
+
+  @media (--mediaMobile) {
+    & {
+      padding: 0 20px;
+      margin-top: 40px;
+    }
+  }
+}
+
+.keeto__sidebar-image {
+  &:first-child {
+    grid-column: col 1 / span 4;
+    grid-row: 1;
+    position: relative;
+    top: 5%;
+    opacity: 0.4;
+  }
+
+  &:last-child {
+    grid-column: col 3 / span 4;
+    grid-row: 1;
+    position: relative;
+    top: -5%;
+  }
+}

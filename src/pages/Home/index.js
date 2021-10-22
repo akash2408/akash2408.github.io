@@ -15,11 +15,25 @@ import heartbeatLarge from 'assets/heartbeat.jpg';
 import heartbeat2Placeholder from 'assets/placeholder.jpg';
 import heartbeat2 from 'assets/heartbeat-app.jpg';
 import heartbeat2Large from 'assets/heartbeat-app.jpg';
+import beatoPlaceholder from 'assets/placeholder.jpg';
+import beato from 'assets/beato.jpg';
+import beatoLarge from 'assets/beato.jpg';
+import beato2Placeholder from 'assets/placeholder.jpg';
+import beato2 from 'assets/beato-app.jpg';
+import beato2Large from 'assets/beato-app.jpg';
+import keetoPlaceholder from 'assets/placeholder.jpg';
+import keeto from 'assets/keeto.jpg';
+import keetoLarge from 'assets/keeto.jpg';
+import keeto2Placeholder from 'assets/placeholder.jpg';
+import keeto2 from 'assets/keeto-app.jpg';
+import keeto2Large from 'assets/keeto-app.jpg';
+import arcardPlaceholder from 'assets/placeholder.jpg';
+import arcard from 'assets/ar-card.gif';
 import iphone11 from 'assets/iphone-11.glb';
 import macbookPro from 'assets/macbook-pro.glb';
 import './index.css';
 
-const disciplines = ['Developer', 'Coder', 'Illustrator'];
+const disciplines = ['Developer', 'Open Source Contributor', 'Coder'];
 
 const Home = () => {
   const { status } = useRouteTransition();
@@ -31,11 +45,13 @@ const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
+  const projectFour = useRef();
+  const projectFive = useRef();
   const details = useRef();
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    const revealSections = [intro, projectOne, projectTwo,details];
+    const revealSections = [intro, projectOne, projectTwo, projectThree,projectFour, projectFive,details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -195,6 +211,75 @@ const Home = () => {
               placeholder: heartbeat2Placeholder,
             },
           ],
+        }}
+      />
+      <ProjectSummary
+        id="project-3"
+        sectionRef={projectThree}
+        visible={visibleSections.includes(projectThree.current)}
+        index={3}
+        title="Beato"
+        description="A Beat Making App"
+        buttonText="View Project"
+        buttonLink="/projects/beato"
+        model={{
+          type: 'phone',
+          alt: 'Beato screen',
+          textures: [
+            {
+              src: beato,
+              srcSet: `${beato} 254w, ${beatoLarge} 508w`,
+              placeholder: beatoPlaceholder,
+            },
+            {
+              src: beato2,
+              srcSet: `${beato2} 254w, ${beato2Large} 508w`,
+              placeholder: beato2Placeholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-4"
+        alternate
+        sectionRef={projectFour}
+        visible={visibleSections.includes(projectFour.current)}
+        index={4}
+        title="Keeto"
+        description="A Messaging App with 1v1 Live Stream"
+        buttonText="View Project"
+        buttonLink="/projects/keeto"
+        model={{
+          type: 'phone',
+          alt: 'Keeto screen',
+          textures: [
+            {
+              src: keeto,
+              srcSet: `${keeto} 254w, ${keetoLarge} 508w`,
+              placeholder: keetoPlaceholder,
+            },
+            {
+              src: keeto2,
+              srcSet: `${keeto2} 254w, ${keeto2Large} 508w`,
+              placeholder: keeto2Placeholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-5"
+        sectionRef={projectFive}
+        visible={visibleSections.includes(projectFive.current)}
+        index={5}
+        title="AR Card"
+        description="An Augmented Reality Card For Android App Which Show The Information Related On The Card Using Unity And Vuforia"
+        buttonText="View Project"
+        buttonLink="https://github.com/akash2408/ARCard"
+        model={{
+          type: 'empty',
+          alt: 'AR Screen',
+          image : arcard,
+          placeholder : arcardPlaceholder
         }}
       />
       <Profile

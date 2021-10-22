@@ -8,12 +8,9 @@ import {
   ProjectSection,
   ProjectSectionContent,
   ProjectImage,
-  ProjectTextRow,
   ProjectSectionHeading,
-  ProjectSectionText,
   ProjectBackground,
   ProjectHeader,
-  ProjectSectionColumns,
 } from 'components/ProjectLayout';
 import visualizerBackground from 'assets/visualizer-background.jpg';
 import visualizerBackgroundLarge from 'assets/visualizer-background.jpg';

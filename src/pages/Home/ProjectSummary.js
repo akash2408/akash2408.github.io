@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import classNames from 'classnames';
 import { Transition } from 'react-transition-group';
+import Image from 'components/Image';
 import Section from 'components/Section';
 import { Button } from 'components/Button';
 import Model from 'components/Model';
@@ -11,7 +12,6 @@ import { media } from 'utils/style';
 import deviceModels from 'components/Model/deviceModels';
 import Heading from 'components/Heading';
 import Text from 'components/Text';
-import { useTheme } from 'components/ThemeProvider';
 import './ProjectSummary.css';
 
 const ProjectSummary = ({
@@ -27,11 +27,9 @@ const ProjectSummary = ({
   alternate,
   ...rest
 }) => {
-  const theme = useTheme();
   const { width } = useWindowSize();
   const titleId = `${id}-title`;
   const isMobile = width <= media.tablet;
-  const svgOpacity = theme.themeId === 'light' ? 0.7 : 1;
   const indexText = index < 10 ? `0${index}` : index;
   const phoneSizes = `(max-width: ${media.tablet}px) 30vw, 20vw`;
   const laptopSizes = `(max-width: ${media.tablet}px) 80vw, 40vw`;
@@ -88,6 +86,17 @@ const ProjectSummary = ({
 
   const renderPreview = status => (
     <div className="project-summary__preview">
+      {model.type === 'empty' && (
+        <Fragment>
+          <Image
+            reveal delay={300}
+            srcSet={`${model.image} 800w, ${model.image} 1440w`}
+            placeholder={model.placeholder}
+            alt={model.alt}
+            sizes={`(max-width: ${media.mobile}px) 500px, (max-width: ${media.tablet}px) 800px, 1000px`}
+          />
+        </Fragment>
+      )}
       {model.type === 'laptop' && (
         <Fragment>
           <Model
