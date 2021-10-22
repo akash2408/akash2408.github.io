@@ -48,7 +48,7 @@ import './index.css';
 const title = 'Hearbeat';
 const description =
   'This project involved creating a fully functional music player.';
-const roles = ['Kotlin', 'Visualizers', 'User Interface'];
+const roles = ['Kotlin', 'Notification', 'Audio Visualization'];
 
 const ProjectHeartbeat = () => {
   useScrollRestore();
@@ -107,7 +107,7 @@ const ProjectHeartbeat = () => {
         </ProjectSectionColumns>
           <ProjectSectionContent>
             <ProjectSectionHeading>Glimpses of Application</ProjectSectionHeading>
-            <div className = 'project-summary__content'>
+            <div className = 'mobile-project-summary__content'>
               <Image
                 srcSet={`${heartbeatSlide1} 800w, ${heartbeatSlideLarge1} 1440w`}
                 placeholder={heartbeatSlidePlaceholder1}

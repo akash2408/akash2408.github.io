@@ -40,7 +40,7 @@ import './index.css';
 const title = 'Visualizer';
 const description =
   'This project involved designing a better way for learning data structure through visualizations.';
-const roles = ['Data Structure', 'Visualizers', 'User Interface'];
+const roles = ['Data Structure', 'Javascript', 'Canvas'];
 
 const ProjectVisualizer = () => {
   useScrollRestore();
@@ -73,7 +73,7 @@ const ProjectVisualizer = () => {
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 90vw, 80vw`}
             />
             <ProjectSectionHeading>Glimpses of Website</ProjectSectionHeading>
-            <div className = 'project-summary__content'>
+            <div className = 'laptop-project-summary__content'>
             <Image
               srcSet={`${visualizerSlide1} 800w, ${visualizerSlideLarge1} 1440w`}
               placeholder={visualizerSlidePlaceholder1}
