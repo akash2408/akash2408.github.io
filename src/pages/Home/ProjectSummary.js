@@ -88,13 +88,15 @@ const ProjectSummary = ({
     <div className="project-summary__preview">
       {model.type === 'empty' && (
         <Fragment>
-          <Image
-            reveal delay={300}
-            srcSet={`${model.image} 800w, ${model.image} 1440w`}
-            placeholder={model.placeholder}
-            alt={model.alt}
-            sizes={`(max-width: ${media.mobile}px) 500px, (max-width: ${media.tablet}px) 800px, 1000px`}
-          />
+          <div className = 'project-summary_empty'>
+            <Image
+              reveal delay={300}
+              srcSet={`${model.image} 800w, ${model.image} 1440w`}
+              placeholder={model.placeholder}
+              alt={model.alt}
+              sizes={`(max-width: ${media.mobile}px) 500px, (max-width: ${media.tablet}px) 800px, 1000px`}
+            />
+          </div>
         </Fragment>
       )}
       {model.type === 'laptop' && (

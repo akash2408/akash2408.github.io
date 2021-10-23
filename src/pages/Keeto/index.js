@@ -52,7 +52,7 @@ const ProjectKeeto = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://github.com/Blaze-69/Keeto"
+          url="https://github.com/akash2408/Keeto"
           roles={roles}
         />
         <ProjectSection first>

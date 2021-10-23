@@ -21,6 +21,7 @@ const ProjectVisualizer = lazy(() => import('pages/Visualizer'));
 const ProjectHeartbeat = lazy(() => import('pages/Heartbeat'));
 const ProjectBeato = lazy(() => import('pages/Beato'));
 const ProjectKeeto = lazy(() => import('pages/Keeto'));
+const ProjectEditor = lazy(() => import('pages/React-Image-Editor'));
 const Page404 = lazy(() => import('pages/404'));
 
 export const AppContext = createContext();
@@ -76,6 +77,7 @@ const AppRoutes = () => {
                     <Route path="/projects/heartbeat" component={ProjectHeartbeat} />
                     <Route path="/projects/beato" component={ProjectBeato} />
                     <Route path="/projects/keeto" component={ProjectKeeto} />
+                    <Route path="/projects/react-image-editor" component={ProjectEditor} />
                     <Route component={Page404} />
                   </Switch>
                 </Suspense>

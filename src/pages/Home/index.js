@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import Intro from 'pages/Home/Intro';
 import ProjectSummary from 'pages/Home/ProjectSummary';
 import Profile from 'pages/Home/Profile';
+import Skill from 'pages/Home/Skill';
 import Footer from 'components/Footer';
 import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
 import { useLocation } from 'react-router-dom';
@@ -29,6 +30,10 @@ import keeto2 from 'assets/keeto-app.jpg';
 import keeto2Large from 'assets/keeto-app.jpg';
 import arcardPlaceholder from 'assets/placeholder.jpg';
 import arcard from 'assets/ar-card.gif';
+import socketPlaceholder from 'assets/placeholder.jpg';
+import socket from 'assets/socket.gif';
+import editorPlaceholder from 'assets/placeholder.jpg';
+import editor from 'assets/editor.jpg';
 import iphone11 from 'assets/iphone-11.glb';
 import macbookPro from 'assets/macbook-pro.glb';
 import './index.css';
@@ -47,11 +52,14 @@ const Home = () => {
   const projectThree = useRef();
   const projectFour = useRef();
   const projectFive = useRef();
+  const projectSix = useRef();
+  const projectSeven = useRef();
+  const skills = useRef();
   const details = useRef();
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    const revealSections = [intro, projectOne, projectTwo, projectThree,projectFour, projectFive,details];
+    const revealSections = [intro,projectOne, projectTwo, projectThree,projectFour, projectFive, projectSix,projectSeven,skills,details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -94,7 +102,7 @@ const Home = () => {
 
     const handleHashchange = (hash, scroll) => {
       clearTimeout(scrollTimeout);
-      const hashSections = [intro, projectOne, details];
+      const hashSections = [intro, projectOne, skills, details];
       const hashString = hash.replace('#', '');
       const element = hashSections.filter(item => item.current.id === hashString)[0];
       if (!element) return;
@@ -245,6 +253,22 @@ const Home = () => {
         sectionRef={projectFour}
         visible={visibleSections.includes(projectFour.current)}
         index={4}
+        title="Multi-Client Chatroom"
+        description="A Multi-Client Chatroom Created Using Socket and Threading"
+        buttonText="View Project"
+        buttonLink="https://github.com/akash2408/multi-client-chatroom"
+        model={{
+          type: 'empty',
+          alt: 'Socket Screen',
+          image : socket,
+          placeholder : socketPlaceholder
+        }}
+      />
+      <ProjectSummary
+        id="project-5"
+        sectionRef={projectFive}
+        visible={visibleSections.includes(projectFive.current)}
+        index={5}
         title="Keeto"
         description="A Messaging App with 1v1 Live Stream"
         buttonText="View Project"
@@ -267,10 +291,27 @@ const Home = () => {
         }}
       />
       <ProjectSummary
-        id="project-5"
-        sectionRef={projectFive}
-        visible={visibleSections.includes(projectFive.current)}
-        index={5}
+        id="project-6"
+        alternate
+        sectionRef={projectSix}
+        visible={visibleSections.includes(projectSix.current)}
+        index={6}
+        title="React-Image-Editor"
+        description="A Full Featured Image Editor Library Using Html5 Canvas and React. It's Easy To Use And Provides Powerful Tools."
+        buttonText="View Project"
+        buttonLink="/projects/react-image-editor"
+        model={{
+          type: 'empty',
+          alt: 'Editor Screen',
+          image : editor,
+          placeholder : editorPlaceholder
+        }}
+      />
+      <ProjectSummary
+        id="project-7"
+        sectionRef={projectSeven}
+        visible={visibleSections.includes(projectSeven.current)}
+        index={7}
         title="AR Card"
         description="An Augmented Reality Card For Android App Which Show The Information Related On The Card Using Unity And Vuforia"
         buttonText="View Project"
@@ -281,6 +322,11 @@ const Home = () => {
           image : arcard,
           placeholder : arcardPlaceholder
         }}
+      />
+      <Skill
+        sectionRef={skills}
+        visible={visibleSections.includes(skills.current)}
+        id="skills"
       />
       <Profile
         sectionRef={details}

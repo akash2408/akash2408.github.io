@@ -100,7 +100,13 @@
   height: 100%;
   width: 100%;
 }
-
+.project-summary_empty{
+  @media (--mediaTablet) {
+    & {
+      padding-bottom: 10vw;
+    }
+  }
+}
 .project-summary__model {
   --width: 180%;
   --aspectRatio: 10 / 12;
